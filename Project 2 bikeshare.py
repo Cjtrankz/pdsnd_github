@@ -19,7 +19,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
       try:
-        city = input("\nPick which city you would like to explore(Chicago, New York City, or Washington): \n")
+        city = input("\nPlease pick which city you would like to explore(Chicago, New York City, or Washington): \n")
         if city.lower() in CITY_DATA.keys():
           break
         else:
@@ -175,10 +175,12 @@ def user_stats(df):
 
       # TO DO: Display earliest, most recent, and most common year of birth
       earliest_year = df['Birth Year'].min()
-      most_recent_year = df['Birth Year'].max()
-      most_common_year = df['Birth Year'].mode()[0]
       print('Earliest year: {}'.format(earliest_year))
+
+      most_recent_year = df['Birth Year'].max()
       print('Most recent year: {}'.format(most_recent_year))
+
+      most_common_year = df['Birth Year'].mode()[0]
       print('Most common year: {}'.format(most_common_year))
     except:
       print('No gender or birth year information for this city.')
